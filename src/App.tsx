@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { ReactElement } from "react";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = (): ReactElement => {
+  return(
+    <div className="app-container">
+      <div className="display-container">
+        <h1>Code Snippet Generator</h1>
+        <div className="tab-container">
+          <div className="tab tab-selected">Code Input</div>
+          <div className="tab tab-disabled">Terminal Output</div>
+          <div className="tab">Advanced Settings</div>
+        </div>
+        {/* Will have conditionally rendered components here depending on which tab is selected */}
+      </div>
     </div>
-  );
-}
+  )
+};
 
 export default App;
