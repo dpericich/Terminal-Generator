@@ -10,18 +10,25 @@
   align-items: center;
   justify-content: center;
   background-image: url('/public/binary_background.jpeg');
+  min-height: 100vh;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .display-container {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+  text-align: center;
   background-color: white;
-  width: 50%;
+  width: 60%;
+  min-height: 100vh;
   height: 100%;
+
+  @media screen and (max-width: 1150px) {
+    width: 66%;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 75%;
+  }
 
   @media screen and (max-width: 600px) {
     width: 100%;
