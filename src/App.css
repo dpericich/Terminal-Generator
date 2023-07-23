@@ -48,17 +48,22 @@
 }
 
 .tab {
-  border: 1px solid black;
+  border: 5px solid black;
   color: black;
   background-color: white;
   width: 33%;
   cursor: pointer;
   text-align: center;
   padding: 1.7rem 0;
+  /* Need to figure out transitions for adding tab-selected */
 }
 
 .tab-selected {
-  background-color: limegreen;
+  background-image: linear-gradient(to left, black, limegreen);
+  color: white;
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px black;
+
 }
 
 .tab-disabled {
@@ -66,6 +71,14 @@
   color: black;
   cursor: not-allowed;
 }
+
+/* ******************** */
+/* Utility Styling */
+/* ******************** */
+.text-bold {
+  font-weight: 900;
+}
+
 .button {
   font-size: 1.7rem;
   color: white;
@@ -84,4 +97,12 @@
 
 .button:active {
   transform: translateY(2px);
+}
+
+h1 { 
+  font-size: 3rem;
+}
+
+h3 { 
+  font-size: 2rem;
 }
