@@ -66,3 +66,22 @@
   color: black;
   cursor: not-allowed;
 }
+.button {
+  font-size: 1.7rem;
+  color: white;
+  background-color: black;
+  border: 2px solid limegreen;
+  padding: 1rem 3rem;
+  margin: 1rem auto;
+  width: 250px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.button:hover,
+.button:active {
+  color: limegreen;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
