@@ -3,19 +3,20 @@ import { formatTerminalInput, formatCodeEditorInput } from '../utils/codeFormatt
 
 interface OutputContainerProps {
     codeInput: string;
+    themeValue: string;
 }
 
-const OutputContainer = ({codeInput}: OutputContainerProps): ReactElement => {
+const OutputContainer = ({codeInput, themeValue}: OutputContainerProps): ReactElement => {
     return(
-        <div className="output-continer">
+        <div className={`output-container ${themeValue}`}>
             <div className="output-header">
                 <div className="circle close"></div>
                 <div className="circle minimize"></div>
                 <div className="circle open"></div>
             </div>
-            {/* Header */}
-            {/* Code */}
-            <div>{codeInput}</div>
+            <div className="output-body">
+                {codeInput}
+            </div>
         </div>
     );
 };
