@@ -36,7 +36,7 @@
 }
 
 /* ******************** */
-/* Tab Styling */
+/*      Tab Styling     */
 /* ******************** */
 .tab-container {
   display: flex;
@@ -73,7 +73,88 @@
 }
 
 /* ******************** */
-/* Utility Styling */
+/*   Output Styling     */
+/* ******************** */
+
+.output-container {
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+  margin: 0 auto;
+  width: 600px;
+  min-height: 300px;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.output-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 2px solid white;
+  padding: 1rem 0 1rem 1rem;
+}
+
+.output-body {
+  padding: 1rem;
+}
+
+.circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0 .3rem;
+}
+
+.close {
+  background-color: red;
+}
+
+.minimize {
+  background-color: yellow;
+}
+
+.open {
+  background-color: green;
+}
+
+/* ******************** */
+/*  Settings Styling    */
+/* ******************** */
+
+settings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-radio-container > input {
+  margin-left: 3rem;
+}
+
+/* ******************** */
+/*    Theme Styling     */
+/* ******************** */
+
+.default {}
+
+.dark {}
+
+.retro {}
+
+.pixie {}
+
+/* ******************** */
+/*   Utility Styling    */
 /* ******************** */
 .text-bold {
   font-weight: 900;
