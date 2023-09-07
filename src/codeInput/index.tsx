@@ -2,8 +2,9 @@ import React, { ReactElement } from 'react';
 
 interface codeInputElementProps {
     codeInput: string,
-    setCodeInput: any,
-    setCurrentTab: any
+    setCodeInput: Function,
+    setCurrentTab: Function,
+    setCodeSubmitted: Function
 }
 
 const CodeInputElement = <codeInput, setCodeInput, setCurrentTab>(props: codeInputElementProps): ReactElement => {
