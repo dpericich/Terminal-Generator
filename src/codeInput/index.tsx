@@ -7,7 +7,7 @@ interface codeInputElementProps {
     setCodeSubmitted: Function
 }
 
-const CodeInputElement = <codeInput, setCodeInput, setCurrentTab>(props: codeInputElementProps): ReactElement => {
+const CodeInputElement = (props: codeInputElementProps): ReactElement => {
     return(
         <div>
             <h3>Enter Your Code Here:</h3>
@@ -28,7 +28,9 @@ const CodeInputElement = <codeInput, setCodeInput, setCurrentTab>(props: codeInp
                 onChange={(e) => {props.setCodeInput(e.target.value)}}
             >
             </textarea>
-            <div className="button" onClick={() => props.setCurrentTab("terminalOutput")}>Generate Code</div>
+            <div className="button" onClick={() => {props.setCurrentTab("terminalOutput"); props.setCodeSubmitted(true)}}>
+                Generate Code
+            </div>
         </div>
     );
 };
