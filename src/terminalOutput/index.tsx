@@ -12,7 +12,7 @@ const TerminalOutputElement = (props: outputContainerProps): ReactElement => {
     return(
         <div>
             <h3>Your Terminal Output</h3>
-            <OutputContainer codeInput={props.codeInput} themeValue={"default"} />
+            <OutputContainer codeInput={props.codeInput} themeValue={"default"} codeType="default" />
             <br />
             <h3>How to Take a Screenshot</h3>
             <span>For PC: <span className='text-bold'>Shift + Windows key <FontAwesomeIcon icon={faWindows} /> + S</span></span>
