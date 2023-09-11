@@ -1,7 +1,10 @@
 import { ReactElement } from 'react';
 
 interface AdvancedSettingsElementProps {
-    setCodeTheme: Function
+    codeTheme: string,
+    setCodeTheme: Function,
+    codeFontFamily: string,
+    setCodeFontFamily: Function
 }
 
 const AdvancedSettingsElement = ({ setCodeTheme }: AdvancedSettingsElementProps): ReactElement => {
