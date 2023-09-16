@@ -27,13 +27,37 @@ const App = (): ReactElement => {
   return(
     <div className="app-container">
       <div className="display-container">
-        <h1>Code Snippet Generator</h1>
+        <h1>TERMINAL GENERATOR</h1>
         <div className="tab-container">
-          <div className="tab tab-selected">Code Input</div>
-          <div className="tab tab-disabled">Terminal Output</div>
-          <div className="tab">Advanced Settings</div>
+          <div className={`tab ${toggleButtonSelect("codeInput")}`}  onClick={() => setCurrentTab("codeInput")}>
+            Code Input
+          </div>
+          <div className={`tab ${toggleButtonSelect("terminalOutput")}`} onClick={() => setCurrentTab("terminalOutput")}>
+            Terminal Output
+          </div>
+          <div className={`tab ${toggleButtonSelect("advancedSettings")}`} onClick={() => setCurrentTab("advancedSettings")}>
+            Advanced Settings
+          </div>
         </div>
-        {/* Will have conditionally rendered components here depending on which tab is selected */}
+        { showComponent('codeInput') && <CodeInputElement 
+                                          codeInput={codeInput} 
+                                          setCodeInput={setCodeInput} 
+                                          setCurrentTab={setCurrentTab} 
+                                          setCodeSubmitted={setCodeSubmitted}
+                                          setCodeType={setCodeType}
+                                        /> } 
+        { showComponent('advancedSettings') && <AdvancedSettingsElement 
+                                                codeTheme={codeTheme} 
+                                                setCodeTheme={setCodeTheme}
+                                                codeFontFamily={codeFontFamily}
+                                                setCodeFontFamily={setCodeFontFamily}
+                                               /> }
+        { showComponent('terminalOutput') && <TerminalOutputElement 
+                                              codeInput={codeInput}
+                                              codeType={codeType}
+                                              codeTheme={codeTheme}
+                                              codeFontFamily={codeFontFamily}
+                                             /> }
       </div>
     </div>
   )
