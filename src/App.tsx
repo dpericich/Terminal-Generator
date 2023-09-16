@@ -5,6 +5,19 @@ import AdvancedSettingsElement from "./advancedSettings";
 import TerminalOutputElement from "./terminalOutput";
 
 const App = (): ReactElement => {
+  const toggleButtonSelect = (tabName: string): string => {
+    const isCurrentTab = tabName === currentTab ? "tab-selected" : "";
+    return isCurrentTab;
+  }
+
+  const showComponent = (tabName: string): boolean => {
+    const displayComponent = (tabName === currentTab);
+    return displayComponent;
+  }
+
+  // Create a wrapper function for on submit
+  // should set submitted to true and change the currentTab to terminalOutput
+
   return(
     <div className="app-container">
       <div className="display-container">
