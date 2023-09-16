@@ -4,18 +4,23 @@ interface codeInputElementProps {
     codeInput: string,
     setCodeInput: Function,
     setCurrentTab: Function,
-    setCodeSubmitted: Function
+    setCodeSubmitted: Function,
+    setCodeType: Function
 }
 
 const CodeInputElement = (props: codeInputElementProps): ReactElement => {
     return(
         <div>
             <h3>Enter Your Code Here:</h3>
-            <div>
-                <input type="radio" id="commandLine" name="codeType" value="CommandLine" defaultChecked={true} />
-                <label htmlFor="commandLine">Command Line</label>
-                <input type="radio" id="code" name="codeType" />
-                <label htmlFor="code">Code Editor</label>
+            <div className='radio-container'>
+                <div className="radio-element-container">
+                    <input type="radio" id="commandLine" name="codeType" value="CommandLine" defaultChecked={true} onClick={() => {props.setCodeType("commandLine")}}/>
+                    <label htmlFor="commandLine">Command Line</label>    
+                </div>
+                <div className="radio-element-container">
+                    <input type="radio" id="code" name="codeType" onClick={() => {props.setCodeType("code")}}/>
+                    <label htmlFor="code">Code Editor</label>
+                </div>
             </div>
             <textarea 
                 style={{resize:'none'}} 
