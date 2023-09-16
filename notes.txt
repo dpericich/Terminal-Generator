@@ -1,0 +1,38 @@
+Sections
+1) A TextArea with a few other inputs to determine commands vs. code
+2) A display tab to show the output from the text inputs
+3) [OPTIONAL] An advanced options tab to set themes, etc.
+
+SCREEN 1 - INPUT
+- what items are important here?
+- need input for commands vs. code
+- need input for light vs. dark theme (this will be basic, but can set more complex in the advanced tab)
+- need input for actual text
+  - will need to determine how to handle commands where the path is included on every line
+  - do I just ask for the path to be included and regex it to remove it?
+
+
+SCREEN 2 - OUTPUT
+- React component container with styling based on theme selection
+- All of the formatted input outputted as prescribed by the user (commands vs. code)
+
+
+TESTING
+- I will need to add jest to this to make sure that my cleaner / formatter code works
+- There are a LOT of edge cases which will be considered for this code
+
+THEMEING
+https://debbie.codes/blog/theming-in-react/
+
+FONTS
+https://fonts.google.com/specimen/Staatliches
+https://fonts.google.com/specimen/Orbitron
+https://fonts.google.com/specimen/Source+Code+Pro
+
+LOGIC FOR FORMATTING
+1) Command Line
+- Need to understand the path
+- Will need a Regex to separate the path from the code
+
+2) Code Editor
+- Will need to use the tag matching to get this to work
