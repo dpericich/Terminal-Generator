@@ -5,6 +5,12 @@ import AdvancedSettingsElement from "./advancedSettings";
 import TerminalOutputElement from "./terminalOutput";
 
 const App = (): ReactElement => {
+  const [currentTab, setCurrentTab] = useState("codeInput");
+  const [codeInput, setCodeInput] = useState("");
+  const [codeSubmitted, setCodeSubmitted] = useState("false");
+  const [codeType, setCodeType] = useState("codeEditor");
+  const [codeTheme, setCodeTheme] = useState("default");
+  const [codeFontFamily, setCodeFontFamily] = useState("-apple-system");
   const toggleButtonSelect = (tabName: string): string => {
     const isCurrentTab = tabName === currentTab ? "tab-selected" : "";
     return isCurrentTab;
