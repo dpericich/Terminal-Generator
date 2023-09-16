@@ -124,22 +124,40 @@
 /*  Settings Styling    */
 /* ******************** */
 
-settings-container {
+.settings-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.settings-radio-container {
+.radio-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3rem auto;
+    width: 100%;
+  }
 }
 
-.settings-radio-container > input {
+.radio-element-container > label {
+  margin-left: 1rem;
+}
+
+
+
+.radio-element-container > input {
   margin-left: 3rem;
+
+  @media screen and (max-width: 750px) {
+    margin: 0;
+  }
 }
 
 /* ******************** */
