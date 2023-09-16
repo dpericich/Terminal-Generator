@@ -1,5 +1,8 @@
-import React, { ReactElement } from "react";
+import { ReactElement, useState, useEffect } from "react";
 import './App.css';
+import CodeInputElement from "./codeInput";
+import AdvancedSettingsElement from "./advancedSettings";
+import TerminalOutputElement from "./terminalOutput";
 
 const App = (): ReactElement => {
   return(
