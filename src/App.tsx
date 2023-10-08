@@ -1,8 +1,10 @@
-import { ReactElement, useState, useEffect } from "react";
+import { ReactElement, useState, createContext } from "react";
 import './App.css';
 import CodeInputElement from "./codeInput";
 import AdvancedSettingsElement from "./advancedSettings";
 import TerminalOutputElement from "./terminalOutput";
+
+const ThemeContext = createContext({});
 
 const App = (): ReactElement => {
   const [currentTab, setCurrentTab] = useState("codeInput");
@@ -27,37 +29,37 @@ const App = (): ReactElement => {
   return(
     <div className="app-container" style={{ fontFamily: codeFontFamily }}>
       <div className="display-container">
-        <h1>TERMINAL GENERATOR</h1>
-        <div className="tab-container">
-          <div className={`tab ${toggleButtonSelect("codeInput")}`}  onClick={() => setCurrentTab("codeInput")}>
-            Code Input
+        <ThemeContext.Provider value={codeTheme} >
+          <h1>TERMINAL GENERATOR</h1>
+          <div className="tab-container">
+            <div className={`tab ${toggleButtonSelect("codeInput")}`}  onClick={() => setCurrentTab("codeInput")}>
+              Code Input
+            </div>
+            <div className={`tab ${toggleButtonSelect("terminalOutput")}`} onClick={() => setCurrentTab("terminalOutput")}>
+              Terminal Output
+            </div>
+            <div className={`tab ${toggleButtonSelect("advancedSettings")}`} onClick={() => setCurrentTab("advancedSettings")}>
+              Advanced Settings
+            </div>
           </div>
-          <div className={`tab ${toggleButtonSelect("terminalOutput")}`} onClick={() => setCurrentTab("terminalOutput")}>
-            Terminal Output
-          </div>
-          <div className={`tab ${toggleButtonSelect("advancedSettings")}`} onClick={() => setCurrentTab("advancedSettings")}>
-            Advanced Settings
-          </div>
-        </div>
-        { showComponent('codeInput') && <CodeInputElement 
-                                          codeInput={codeInput} 
-                                          setCodeInput={setCodeInput} 
-                                          setCurrentTab={setCurrentTab} 
-                                          setCodeSubmitted={setCodeSubmitted}
-                                          setCodeType={setCodeType}
-                                        /> } 
-        { showComponent('advancedSettings') && <AdvancedSettingsElement 
-                                                codeTheme={codeTheme} 
-                                                setCodeTheme={setCodeTheme}
-                                                codeFontFamily={codeFontFamily}
-                                                setCodeFontFamily={setCodeFontFamily}
-                                               /> }
-        { showComponent('terminalOutput') && <TerminalOutputElement 
-                                              codeInput={codeInput}
-                                              codeType={codeType}
-                                              codeTheme={codeTheme}
-                                              codeFontFamily={codeFontFamily}
-                                             /> }
+          { showComponent('codeInput') && <CodeInputElement 
+                                            codeInput={codeInput} 
+                                            setCodeInput={setCodeInput} 
+                                            setCurrentTab={setCurrentTab} 
+                                            setCodeSubmitted={setCodeSubmitted}
+                                            setCodeType={setCodeType}
+                                          /> } 
+          { showComponent('advancedSettings') && <AdvancedSettingsElement 
+                                                  codeTheme={codeTheme} 
+                                                  setCodeTheme={setCodeTheme}
+                                                  codeFontFamily={codeFontFamily}
+                                                  setCodeFontFamily={setCodeFontFamily}
+                                                /> }
+          { showComponent('terminalOutput') && <TerminalOutputElement 
+                                                codeInput={codeInput}
+                                                codeType={codeType}
+                                              /> }
+        </ThemeContext.Provider>
       </div>
     </div>
   )
