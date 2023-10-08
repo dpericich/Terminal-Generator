@@ -11,6 +11,7 @@ interface codeInputElementProps {
 const CodeInputElement = (props: codeInputElementProps): ReactElement => {
     return(
         <div>
+            <h3>Paste Your Code Here:</h3>
             {/* Commenting out currently bc I don't support syntax coloring */}
             {/* <div className='radio-container'>
                 <div className="radio-element-container">
@@ -28,7 +29,7 @@ const CodeInputElement = (props: codeInputElementProps): ReactElement => {
                 id="" 
                 cols={90} 
                 rows={20} 
-                placeholder="Enter your code here..."
+                placeholder="Paste your code here..."
                 value={props.codeInput}
                 onChange={(e) => {props.setCodeInput(e.target.value)}}
             >
