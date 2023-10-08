@@ -25,7 +25,7 @@ const App = (): ReactElement => {
   // should set submitted to true and change the currentTab to terminalOutput
 
   return(
-    <div className="app-container">
+    <div className="app-container" style={{ fontFamily: codeFontFamily }}>
       <div className="display-container">
         <h1>TERMINAL GENERATOR</h1>
         <div className="tab-container">

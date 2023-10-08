@@ -4,22 +4,18 @@ import { faWindows} from '@fortawesome/free-brands-svg-icons';
 import OutputContainer from '../components/OutputContainer';
 interface outputContainerProps {
     codeInput: string;
-    codeTheme: string;
     codeType: string;
-    codeFontFamily: string;
 }
 
 // This will either accept props or get the input from the store
-const TerminalOutputElement = ({ codeInput, codeTheme, codeType, codeFontFamily }: 
+const TerminalOutputElement = ({ codeInput, codeType }: 
     outputContainerProps): ReactElement => {
         return(
             <div>
                 <h3>Your Terminal Output</h3>
                 <OutputContainer 
                     codeInput={codeInput} 
-                    themeValue={codeTheme} 
                     codeType={codeType}
-                    codeFontFamily={codeFontFamily}
                 />
                 <br />
                 <h3>How to Take a Screenshot</h3>
