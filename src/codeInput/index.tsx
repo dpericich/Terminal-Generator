@@ -11,8 +11,8 @@ interface codeInputElementProps {
 const CodeInputElement = (props: codeInputElementProps): ReactElement => {
     return(
         <div>
-            <h3>Enter Your Code Here:</h3>
-            <div className='radio-container'>
+            {/* Commenting out currently bc I don't support syntax coloring */}
+            {/* <div className='radio-container'>
                 <div className="radio-element-container">
                     <input type="radio" id="commandLine" name="codeType" value="CommandLine" defaultChecked={true} onClick={() => {props.setCodeType("commandLine")}}/>
                     <label htmlFor="commandLine">Command Line</label>    
@@ -21,7 +21,7 @@ const CodeInputElement = (props: codeInputElementProps): ReactElement => {
                     <input type="radio" id="code" name="codeType" onClick={() => {props.setCodeType("code")}}/>
                     <label htmlFor="code">Code Editor</label>
                 </div>
-            </div>
+            </div> */}
             <textarea 
                 style={{resize:'none'}} 
                 name="" 
