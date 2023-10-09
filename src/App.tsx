@@ -4,7 +4,7 @@ import CodeInputElement from "./codeInput";
 import AdvancedSettingsElement from "./advancedSettings";
 import TerminalOutputElement from "./terminalOutput";
 
-const ThemeContext = createContext({});
+export const FontFamilyContext = createContext("sans-serif")
 
 const App = (): ReactElement => {
   const [currentTab, setCurrentTab] = useState("codeInput");
@@ -30,35 +30,36 @@ const App = (): ReactElement => {
     <div className="app-container" style={{ fontFamily: codeFontFamily }}>
       <div className="display-container">
         <ThemeContext.Provider value={codeTheme} >
-          <h1>TERMINAL GENERATOR</h1>
-          <div className="tab-container">
-            <div className={`tab ${toggleButtonSelect("codeInput")}`}  onClick={() => setCurrentTab("codeInput")}>
-              Code Input
+          <FontFamilyContext.Provider value={codeFontFamily} >
+            <h1>TERMINAL GENERATOR</h1>
+            <div className="tab-container">
+              <div className={`tab ${toggleButtonSelect("codeInput")}`}  onClick={() => setCurrentTab("codeInput")}>
+                Code Input
+              </div>
+              <div className={`tab ${toggleButtonSelect("terminalOutput")}`} onClick={() => setCurrentTab("terminalOutput")}>
+                Terminal Output
+              </div>
+              <div className={`tab ${toggleButtonSelect("advancedSettings")}`} onClick={() => setCurrentTab("advancedSettings")}>
+                Advanced Settings
+              </div>
             </div>
-            <div className={`tab ${toggleButtonSelect("terminalOutput")}`} onClick={() => setCurrentTab("terminalOutput")}>
-              Terminal Output
-            </div>
-            <div className={`tab ${toggleButtonSelect("advancedSettings")}`} onClick={() => setCurrentTab("advancedSettings")}>
-              Advanced Settings
-            </div>
-          </div>
-          { showComponent('codeInput') && <CodeInputElement 
-                                            codeInput={codeInput} 
-                                            setCodeInput={setCodeInput} 
-                                            setCurrentTab={setCurrentTab} 
-                                            setCodeSubmitted={setCodeSubmitted}
-                                            setCodeType={setCodeType}
-                                          /> } 
-          { showComponent('advancedSettings') && <AdvancedSettingsElement 
-                                                  codeTheme={codeTheme} 
-                                                  setCodeTheme={setCodeTheme}
-                                                  codeFontFamily={codeFontFamily}
-                                                  setCodeFontFamily={setCodeFontFamily}
+            { showComponent('codeInput') && <CodeInputElement 
+                                              codeInput={codeInput} 
+                                              setCodeInput={setCodeInput} 
+                                              setCurrentTab={setCurrentTab} 
+                                              setCodeSubmitted={setCodeSubmitted}
+                                              setCodeType={setCodeType}
+                                            /> } 
+            { showComponent('advancedSettings') && <AdvancedSettingsElement 
+                                                    codeTheme={codeTheme} 
+                                                    setCodeTheme={setCodeTheme}
+                                                    codeFontFamily={codeFontFamily}
+                                                    setCodeFontFamily={setCodeFontFamily}
+                                                  /> }
+            { showComponent('terminalOutput') && <TerminalOutputElement 
+                                                    codeInput={codeInput}
                                                 /> }
-          { showComponent('terminalOutput') && <TerminalOutputElement 
-                                                codeInput={codeInput}
-                                                codeType={codeType}
-                                              /> }
+          </FontFamilyContext.Provider>
         </ThemeContext.Provider>
       </div>
     </div>
