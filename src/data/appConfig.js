@@ -26,5 +26,12 @@ export const themeSettings = {
         "close": "#541e16",
         "minimize": "#a2d870",
         "open": "#295128"
+    },
+    "flame": {
+        "terminalPrimary": "#E25822",
+        "terminalSecondary": "#3500BC",
+        "close": "#0087BC",
+        "minimize": "#E2B822",
+        "open": "#4DFF7F"
     }
 }

@@ -52,6 +52,17 @@ const AdvancedSettingsElement = ({ setCodeTheme, codeTheme, codeFontFamily, setC
                         <div className="radio-element-container">
                             <input 
                                 type="radio" 
+                                id="flame" 
+                                name="theme" 
+                                value="Flame" 
+                                checked={codeTheme === "flame"}
+                                onClick={() => setCodeTheme("flame")} 
+                            />
+                            <label htmlFor="flame">Flame</label>
+                        </div>
+                        <div className="radio-element-container">
+                            <input 
+                                type="radio" 
                                 id="pixie" 
                                 name="theme" 
                                 value="Pixie" 
