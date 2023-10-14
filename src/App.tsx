@@ -4,6 +4,7 @@ import CodeInputElement from "./codeInput";
 import AdvancedSettingsElement from "./advancedSettings";
 import TerminalOutputElement from "./terminalOutput";
 
+export const ThemeContext = createContext("default");
 export const FontFamilyContext = createContext("sans-serif")
 
 const App = (): ReactElement => {
