@@ -6,7 +6,6 @@ interface outputContainerProps {
     codeInput: string;
 }
 
-// This will either accept props or get the input from the store
 const TerminalOutputElement = ({ codeInput }: 
     outputContainerProps): ReactElement => {
         return(
