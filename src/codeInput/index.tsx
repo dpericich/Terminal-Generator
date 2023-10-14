@@ -5,7 +5,6 @@ interface codeInputElementProps {
     setCodeInput: Function,
     setCurrentTab: Function,
     setCodeSubmitted: Function,
-    setCodeType: Function
 }
 
 const CodeInputElement = (props: codeInputElementProps): ReactElement => {
