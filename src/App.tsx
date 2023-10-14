@@ -10,8 +10,7 @@ export const FontFamilyContext = createContext("sans-serif")
 const App = (): ReactElement => {
   const [currentTab, setCurrentTab] = useState("codeInput");
   const [codeInput, setCodeInput] = useState("");
-  const [codeSubmitted, setCodeSubmitted] = useState("false");
-  const [codeType, setCodeType] = useState("codeEditor");
+  const [codeSubmitted, setCodeSubmitted] = useState(false);
   const [codeTheme, setCodeTheme] = useState("default");
   const [codeFontFamily, setCodeFontFamily] = useState("-apple-system");
   const toggleButtonSelect = (tabName: string): string => {
@@ -49,7 +48,6 @@ const App = (): ReactElement => {
                                               setCodeInput={setCodeInput} 
                                               setCurrentTab={setCurrentTab} 
                                               setCodeSubmitted={setCodeSubmitted}
-                                              setCodeType={setCodeType}
                                             /> } 
             { showComponent('advancedSettings') && <AdvancedSettingsElement 
                                                     codeTheme={codeTheme} 
