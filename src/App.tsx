@@ -13,6 +13,7 @@ const App = (): ReactElement => {
   const [codeSubmitted, setCodeSubmitted] = useState(false);
   const [codeTheme, setCodeTheme] = useState("default");
   const [codeFontFamily, setCodeFontFamily] = useState("-apple-system");
+  
   const toggleButtonSelect = (tabName: string): string => {
     const isCurrentTab = tabName === currentTab ? "tab-selected" : "";
     return isCurrentTab;
