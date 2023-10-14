@@ -15,6 +15,9 @@ const TerminalOutputElement = ({ codeInput }:
                     codeInput={codeInput} 
                 />
                 <br />
+                <a href="https://www.buymeacoffee.com/danielperi9" target="_blank" style={{marginTop: "30px"}}>
+                    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style={{height: "60px", width: "217px"}} />
+                </a>
                 <h3>How to Take a Screenshot</h3>
                 <span>For PC: <span className='text-bold'>
                     Shift + Windows key <FontAwesomeIcon icon={faWindows} /> + S</span>
