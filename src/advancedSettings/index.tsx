@@ -22,7 +22,7 @@ const AdvancedSettingsElement = ({ setCodeTheme, codeTheme, codeFontFamily, setC
                                 id="default" 
                                 name="theme" 
                                 value="Default" 
-                                defaultChecked={true} 
+                                checked={codeTheme === "default"}
                                 onClick={() => setCodeTheme("default")} 
                             />
                             <label htmlFor="default">Default</label>
@@ -33,6 +33,7 @@ const AdvancedSettingsElement = ({ setCodeTheme, codeTheme, codeFontFamily, setC
                                 id="darkMode" 
                                 name="theme" 
                                 value="Dark Mode" 
+                                checked={codeTheme === "dark"}
                                 onClick={() => setCodeTheme("dark")} 
                             />
                             <label htmlFor="darkMode">Dark Mode</label>
@@ -43,6 +44,7 @@ const AdvancedSettingsElement = ({ setCodeTheme, codeTheme, codeFontFamily, setC
                                 id="retro" 
                                 name="theme" 
                                 value="Retro" 
+                                checked={codeTheme === "retro"}
                                 onClick={() => setCodeTheme("retro")} 
                             />
                             <label htmlFor="retro">Retro</label>
@@ -53,6 +55,7 @@ const AdvancedSettingsElement = ({ setCodeTheme, codeTheme, codeFontFamily, setC
                                 id="pixie" 
                                 name="theme" 
                                 value="Pixie" 
+                                checked={codeTheme === "pixie"}
                                 onClick={() => setCodeTheme("pixie")} 
                             />
                             <label htmlFor="pixie">Pixie</label>
